@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+        }
+        body {
+            background-image: url('back.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="center" style="width: 450px;background-color: rgb(230, 230, 255);">
+        <form id="registrationForm">
+            <h1 align="center" style="color: rgb(0, 0, 51);">REGISTRATION FORM</h1>
+            <label style="font-size: 20px;color: rgb(0, 0, 51);">First Name: </label>
+            <input type="text" id="firstName" style="margin-left: 75px; height: 30px; width: 250px;"><br><br>
+            <label style="font-size: 20px;color: rgb(0, 0, 51);">Last Name: </label>
+            <input type="text" id="lastName" style="margin-left: 75px; height: 30px; width: 250px;"><br><br>
+            <label style="font-size: 20px;color: rgb(0, 0, 51);">Your Email: </label>
+            <input type="email" id="email" style="margin-left: 70px; height: 30px; width: 250px;"><br><br>
+            <label style="font-size: 20px;color: rgb(0, 0, 51);">Phone Number: </label>
+            <input type="tel" id="phone" style="margin-left: 40px;height: 30px; width: 250px;"><br><br>
+            <label style="font-size: 20px; margin-right: 128px;color: rgb(0, 0, 51);">Age: </label>
+            <input type="text" id="age" placeholder="Above 18 only" style="height: 30px; width: 250px;"><br>
+            <h6 style="color: rgb(0, 0, 51);">NOTE: We do not accept candidates younger than 18 to audition<br>without the consent of their parents or guardians.</h6>
+            <label style="font-size: 20px;color: rgb(0, 0, 51);">Select Category: </label>
+            <select id="category" style="margin-left: 40px;height: 30px; width: 250px;">
+                <option value="casting calls">Casting Calls</option>
+                <option value="Casting Audtions">Casting Audtions</option>
+                <option value="Theatre Auditions">Theatre Auditions</option>
+                <option value="Singing Auditions">Singing Auditions</option>
+              </select><br><br>
+              <label style="font-size: 20px;color: rgb(0, 0, 51);">Date/Time of Audition:</label>
+              <input type="date" id="date" style="margin-right: 20px;"><input type="time" id="time"><br><br>
+              <input type="submit" value="Register" style="height: 25px; width: 250px;margin-left: 100px;background-color: rgb(0, 0, 51); color: rgb(230, 230, 255); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+              <h6 style="color: rgb(0, 0, 51);">2024 Audition Registration Form | By clicking 'Register' you agree on our terms & conditions.</h6>
+              <h5 style="color: rgb(0, 0, 51); text-align: center;">Send in <a href="auditionvideo.html">AUDITION TAPE</a> now</h4>
+                <a href="Auditionform.html"></a>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var age = document.getElementById('age').value;
+            var category = document.getElementById('category').value;
+            var date = document.getElementById('date').value;
+            var time = document.getElementById('time').value;
+            if (!firstName || !lastName || !email || !phone || !age || !category || !date || !time) {
+                alert('Please fill out all fields.');
+                return;
+            }
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            var phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phone)) {
+                alert('Please enter a valid phone number.');
+                return;
+            }
+            var ageNumber = parseInt(age);
+            if (isNaN(ageNumber) || ageNumber < 18) {
+                alert('You must be at least 18 years old.');
+                return;
+            }
+            alert('Form submitted successfully!');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body bgcolor="#00004d">
+    <div style="text-align: center;">
+        <img src="talenthunt.png" style="height: 130px;">
+    </div>
+    <div class="center" style="width: 500px; height: 500px;">
+        <form action="thankyou.html" onsubmit="return validateForm()">
+            <font color="#ccccff">
+                <h1 align="center" style="font-size: 45;">AUDITION FORM</h1>
+            </font>
+            <font color="white">
+                <label style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">First Name</label>
+                <label style="margin-left: 185px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Last Name</label><br>
+                <input type="text" name="firstName" required>
+                <input type="text" name="lastName" style="margin-left: 90px;" required><br><br>
+                <label style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Email</label><br>
+                <input type="email" name="email" size="50" required><br><br>
+                <label style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Phone</label><br>
+                <input type="tel" name="phone" pattern="[0-9]{10}" size="15" required><br>
+                <font color="#ccccff">
+                    <h1><b>About You</b></h1><br>
+                </font>
+                <font color="#ccccff">
+                    <label for="I am" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">I am</label>
+                </font>
+                <font color="#ccccff">
+                    <label style="margin-left: 150px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Talents and Skills</label><br>
+                </font>
+                <select name="Iam" id="I am" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Engineer">Engineer</option>
+                    <option value="other job">Other job</option>
+                </select>
+                <input type="checkbox" name="talent" value="Acting Audition" style="margin-left: 100px;">Acting Audition 
+                <input type="checkbox" name="talent" value="Dance" style="margin-left: 34px;">Dance<br>
+                <input type="checkbox" name="talent" value="Cooking shows" style="margin-left: 181px;">Cooking shows
+                <input type="checkbox" name="talent" value="Singing Show" style="margin-left: 38px;">Singing Show<br>
+                <input type="checkbox" name="talent" value="Reality TV Show" style="margin-left: 181px;">Reality TV Show
+                <input type="checkbox" name="talent" value="Dating Show" style="margin-left: 25px;">Dating Show<br>
+                <input type="checkbox" name="talent" value="Baby Contests" style="margin-left: 181px;">Baby Contests
+                <input type="checkbox" name="talent" value="Commercials" style="margin-left: 44px;">Commercials<br>
+
+                <label style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Shows I've been in:</label><br>
+                <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea><br>
+                <font color="#ccccff">
+                    <h1><b>Show Details:</b></h1>
+                </font>
+                <label style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Part Auditioning for</label>
+                <input type="text" name="partAuditioningFor" style="height: 50px; width: 430px;" required><br><br>
+                <input type="submit" value="SUBMIT" style="height: 40px; width: 250px; margin-left: 100px; background-color: #ccccff; color: #00004d; font-family: 'Times New Roman', Times, serif; font-size: 30;">
+                <br><br><br>
+            </font>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            let checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
+            if (!checkedOne) {
+                alert("Please select at least one talent or skill.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <style>
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body bgcolor="#00004d">
+    <div style="text-align: center;">
+        <img src="talenthunt.png" style="height: 130px;">
+    </div>
+    <form onsubmit="return validateForm()">
+        <div style=" width: 300px; height: 400px; border: solid rgb(230, 230, 255) 2px;background-color: rgb(230, 230, 255);" class="center">
+            <h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center; color: rgb(0, 0, 51);">Signup Form</h1>
+            <label style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-left: 10px; color:rgb(0, 0, 51) ;">Email or Phone </label><br>
+            <input type="text" id="username" style="height: 25px; width: 250px;margin-left: 10px;"><br><br>
+            <label style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-left: 10px; color: rgb(0, 0, 51);">Create Password </label><br>
+            <input type="password" id="password" style="height: 25px; width: 250px;margin-left: 10px;"><br><br>
+            <label style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-left: 10px; color: rgb(0, 0, 51);">Confirm Password </label><br>
+            <input type="password" id="confirm_password" style="height: 25px; width: 250px;margin-left: 10px;"><br><br>
+            <input type="submit" value="SIGNUP" style="height: 25px; width: 250px; background-color: rgb(0, 0, 51); color: rgb(230, 230, 255); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-left: 11px;"><br><br>
+            <label style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-left: 11px;">Already have an account?</label>
+            <a href="loginform.html">Login now</a>
+        </div>
+    </form>
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+
+            // Validate email or phone
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const phonePattern = /^[0-9]{10}$/;
+
+            if (!username) {
+                alert('Please enter your email or phone.');
+                return false;
+            } else if (!emailPattern.test(username) && !phonePattern.test(username)) {
+                alert('Please enter a valid email or phone number.');
+                return false;
+            }
+
+            // Validate password
+            if (!password) {
+                alert('Please create a password.');
+                return false;
+            }
+
+            // Validate confirm password
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

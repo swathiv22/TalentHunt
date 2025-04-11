@@ -1,0 +1,33 @@
+#include<stdio.h>
+int a[9][9];
+v[9]={0};
+void dfs(int a[][9],int i)
+{	int j;
+	printf("%5d ",i);
+	v[i]=1;
+	for(j=0;j<9;j++)
+	{
+		{
+			if(a[i][j]==1 && v[j]==0)
+			{
+				dfs(a,j);
+			}
+		}
+	}
+}
+
+int main(){
+	int start,i,j;
+	
+	for(i=0;i<9;i++)
+	{
+		for (j=0;j<9;j++)
+		{
+			printf("Enter the matrix: m[%d][%d]: ",i,j);
+			scanf("%d",&a[i][j]);
+		}
+	}
+	printf("Enter the start variable: ");
+	scanf("%d",&start);
+	dfs(a,start);
+}

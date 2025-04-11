@@ -1,0 +1,271 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins',sans-serif;
+}
+
+:root{
+    --bg-color:#00004d;
+    --text-color:#fff;
+    --main-color:#ae8957;
+    --big-font:6.6rem;
+    --p-font:1rem;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header{
+
+    
+    width: 100%;
+    top: 0;
+    right: 20px;
+    z-index: 1000;
+    padding: 35px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    
+}
+
+.logo img{
+    width: 120px;
+    height: auto;
+}
+
+.logo{
+    position: absolute;
+    left: 430px;
+}
+
+
+.menu ul{
+    display: inline-flex;
+    margin: 50px;
+    
+}
+
+
+.menu ul li{
+    list-style-type: none;
+    margin: 0 20px;
+    cursor: pointer;
+    align-items: center;
+}
+
+
+.signup-btn{
+    align-items: right;
+    top: 76px;
+    left: 570px;
+    justify-content: center;
+    position: absolute;
+    text-decoration: none;
+    color: #000000;
+    border:2px solid transparent;
+    border-radius:20px;
+    background-color: #fff;
+    background-origin: border-box;
+    background-clip: content-box;
+
+}
+
+.signup-btn span{
+    display: block;
+    padding: 8px 22px;
+}
+
+
+.FAQ-btn{
+    align-items: right;
+    top: 76px;
+    left: 950px;
+    justify-content: center;
+    position: absolute;
+    text-decoration: none;
+    color: #000000;
+    border:2px solid transparent;
+    border-radius:20px;
+    background-color: #fff;
+    background-origin: border-box;
+    background-clip: content-box;
+
+}
+.FAQ-btn span{
+    display: block;
+    padding: 8px 25px;
+}
+
+
+.news-btn{
+    align-items: right;
+    top: 76px;
+    left: 760px;
+    justify-content: center;
+    position: absolute;
+    text-decoration: none;
+    color: #000000;
+    border:2px solid transparent;
+    border-radius:20px;
+    background-color: #fff;
+    background-origin: border-box;
+    background-clip: content-box;
+
+}
+.news-btn span{
+    display: block;
+    padding: 8px 22px;
+}
+
+
+
+.banner{
+    width: 100%;
+    height: 0%;
+    top:-1%;
+    text-align: center;
+    position:relative;
+    color: #fff;
+    
+}
+
+
+.app-text{
+    width: 80%;
+    float:left;
+  
+    
+}
+
+
+.app-text h1{
+    font-size:33px;
+    width: 640px;
+    top: -240px;
+    margin-left: 400px;
+    position:relative;
+
+}
+
+
+.app-text p{
+    top: -230px;
+    font-size:15px;
+    width: 650px;
+    position:relative;
+    margin-left: 430px;
+    line-height: 25px;
+   
+}
+
+
+.app-picture{
+    display: inline-block;
+    width: fit-content;
+    margin: 0 auto;
+
+}
+
+.app-picture img{
+    width:100%;
+    border:0.3vh solid black ;
+    border-radius: 15px;
+    
+}
+
+.join ul{
+    position: relative;
+    margin:30px;
+    right: 90px;
+    margin-top: -220px;
+}
+
+.j-btn{
+    padding: 7px 10px;
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 20px;
+    color: #000000;
+    line-height: 5.5vh;
+    
+    
+}
+
+.cont{
+       
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    
+}
+.myman{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gojo{
+    width:120px;
+    height:500px;
+    margin:10px;
+    border-radius: 50px;
+    background:url("1.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: 0.5s;
+    
+}
+
+.gojo:nth-child(2){
+    background: url("2.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.gojo:nth-child(3){
+    background: url("theatreaud.png");
+    background-size: cover;
+    background-position: center;
+}
+
+
+.gojo:nth-child(4){
+    background: url("singingaud.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.gojo h4{
+
+    color: rgb(238, 238, 238);
+    position: absolute;
+    bottom:0px;
+    left: 20px;
+    opacity: 0;
+    transition: bottom 0.5s, opacity 0.5s;
+}
+
+.gojo:hover{
+    width: 300px;
+    cursor: pointer;
+}
+
+.gojo:hover h4{
+    opacity: 1;
+    bottom: 25px;
+}
+
+
+
+
