@@ -1,0 +1,1 @@
+🎭 Talent Hunt Website – A static, responsive website built with HTML, CSS, and JavaScript that allows users to submit auditions online and connects talents with agents through an interactive interface.
